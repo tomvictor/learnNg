@@ -1,9 +1,12 @@
 <h2 class="text-secondary">List of available products</h2>
 <br>
+Search : form
+
+search by : 
 <table class="table table-bordered" *ngIf="products && products.length">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col"><button class="btn btn-light">Show Image</button></th>
         <th scope="col">Name</th>
         <th scope="col">Type</th>
         <th scope="col">Price</th>
@@ -11,7 +14,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products">
-        <th scope="row">{{product.id}}</th>
+        <th>
+          <img [src]="product.image_url" [alt]="product.name" [style.width.px]="imageWidth" [style.margin]="imageMargin">
+        </th>
         <td>{{product.name}}</td>
         <td>{{product.type}}</td>
         <td>{{product.price}}</td>
