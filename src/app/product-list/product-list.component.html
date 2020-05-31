@@ -1,6 +1,6 @@
 <h2 class="text-secondary">List of available products</h2>
 <br>
-<table class="table table-bordered">
+<table class="table table-bordered" *ngIf="products && products.length">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -10,11 +10,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.type}}</td>
+        <td>{{product.price}}</td>
       </tr>
 
     </tbody>
