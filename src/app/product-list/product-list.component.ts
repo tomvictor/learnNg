@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  imageWidth : number = 90;
+  imageMargin : number = 2;
+  showImage : boolean = false;
+  listFilter : string = "car";
   products : any[] = [
     {
       "id": 1,
@@ -29,8 +33,11 @@ export class ProductListComponent implements OnInit {
       "image_url" : "assets/images/battery.jpg"
     }
   ];
-  imageWidth : number = 90;
-  imageMargin : number = 2;
+  
+  toggleImage():void {
+    console.log("clicked");
+    this.showImage = !this.showImage;
+  }
 
   constructor() { }
 

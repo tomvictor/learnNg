@@ -1,12 +1,15 @@
 <h2 class="text-secondary">List of available products</h2>
 <br>
-Search : form
-
-search by : 
+Search : <input [(ngModel)]="listFilter" type="text">
+<br><br>
+<p>filtered by : {{listFilter}}</p>
+<br>
 <table class="table table-bordered" *ngIf="products && products.length">
     <thead>
       <tr>
-        <th scope="col"><button class="btn btn-light">Show Image</button></th>
+        <th scope="col"><button class="btn btn-light" (click)=toggleImage()>
+          {{ showImage ? "Hide" : "Show"}} Image
+        </button></th>
         <th scope="col">Name</th>
         <th scope="col">Type</th>
         <th scope="col">Price</th>
@@ -15,7 +18,7 @@ search by :
     <tbody>
       <tr *ngFor="let product of products">
         <th>
-          <img [src]="product.image_url" [alt]="product.name" [style.width.px]="imageWidth" [style.margin]="imageMargin">
+          <img *ngIf="showImage" [src]="product.image_url" [alt]="product.name" [style.width.px]="imageWidth" [style.margin]="imageMargin">
         </th>
         <td>{{product.name}}</td>
         <td>{{product.type}}</td>
