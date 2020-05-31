@@ -15,21 +15,21 @@ export class ProductListComponent implements OnInit {
       "id": 1,
       "name" : "Car",
       "type" : "Automobile",
-      "price" : "$2000",
+      "price" : "2000",
       "image_url" : "assets/images/car.jpg"
     },
     {
       "id": 2,
       "name" : "Antenna",
       "type" : "Electronics",
-      "price" : "$100",
+      "price" : "100",
       "image_url" : "assets/images/antenna.jpg"
     },
     {
       "id": 3,
       "name" : "Battery",
       "type" : "Electronics",
-      "price" : "$10",
+      "price" : "10",
       "image_url" : "assets/images/battery.jpg"
     }
   ];

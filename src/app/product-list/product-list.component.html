@@ -20,9 +20,9 @@ Search : <input [(ngModel)]="listFilter" type="text">
         <th>
           <img *ngIf="showImage" [src]="product.image_url" [alt]="product.name" [style.width.px]="imageWidth" [style.margin]="imageMargin">
         </th>
-        <td>{{product.name}}</td>
-        <td>{{product.type}}</td>
-        <td>{{product.price}}</td>
+        <td>{{product.name|uppercase}}</td>
+        <td>{{product.type|lowercase}}</td>
+        <td>{{product.price|currency:'USD':'symbol':'1.2-2'}}</td>
       </tr>
 
     </tbody>
